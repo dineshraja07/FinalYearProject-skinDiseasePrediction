@@ -1,0 +1,18 @@
+<div class="container">
+    <app-side-nave-bar></app-side-nave-bar>
+    <div class="dropdown-webcam">
+    <div class="dropdown">
+        <app-dropdown ></app-dropdown>
+        <div class="enableButton" (click)="enableCamera()">Enable Camera</div>
+    </div>
+    @if(this.isEnableCamera==true)
+    {
+        <app-webcam (isCaptured)="captureFunction()"></app-webcam >
+    }
+    @if(this.isCaptured==true)
+    {   
+        <img [src]="this.imageUrl" alt="Not loaded">
+    }
+</div>
+</div>
+

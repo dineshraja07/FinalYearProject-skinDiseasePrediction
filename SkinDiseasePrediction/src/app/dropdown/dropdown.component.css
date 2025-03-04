@@ -1,0 +1,60 @@
+.container-div{
+    display: flex;
+ 
+    flex-direction: column;
+color: white;
+/* position: absolute;
+top: calc(100% + 10px);
+left: 40px; */
+position: absolute;
+left: 40px;
+gap: 10px;
+box-sizing: border-box;
+background-color: white;
+}
+.container1{
+display: none;
+background-color: white;
+}
+.outer{
+ position: relative;
+ border-radius: 5%;
+}
+.container.element{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;    
+    color:  rgb(104, 101, 101);
+    height: 50px;
+    width: 100px;
+    z-index: 1;
+}
+
+.container.element:hover{
+    
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(105, 128, 105);  
+        color: white;
+        height: 50px;
+        width: 100px;
+        z-index: 1;
+    }
+
+
+.select{
+    border-radius: 5%;
+    background-color:  rgb(104, 101, 101);
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 150px;
+   gap: 20px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color: white;
+
+}

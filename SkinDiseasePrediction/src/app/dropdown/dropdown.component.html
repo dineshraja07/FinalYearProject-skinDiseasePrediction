@@ -1,0 +1,16 @@
+    <div class="outer">
+    <div class="select" (click)="selected()">
+        <p>Select</p>
+        <img src="assets/dropdown.png" alt="P" class="profile-img" height="24" width="24"
+        />
+    </div>
+
+    <div  [class]="{'container-div': isSelected , 'container1': !isSelected}">
+        <div class="container element" (click)="OptionClicked('Psoriasis')"> <p>Psoriasis</p></div>
+        <div class="container element"  (click)="OptionClicked('Eczema')"><p>Eczema</p></div>
+        <div class="container element"  (click)="OptionClicked('Melasma')"><p>Melasma</p></div>
+        <div class="container element"  (click)="OptionClicked('Chicken box')"><p>Chicken box</p></div>
+        <div class="container element"  (click)="OptionClicked('Melonema')"><p>Melonema</p></div>
+    </div>
+
+</div>
