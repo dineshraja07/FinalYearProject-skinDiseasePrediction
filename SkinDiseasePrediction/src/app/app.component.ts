@@ -21,9 +21,11 @@ export class AppComponent {
   {
     this.isEnableCamera=true;
   }
-  captureFunction()
+  captureFunction(str:string)
   {
      this.isEnableCamera=false;
      this.isCaptured=true;
+     console.log("capture function value : ",str);
+     this.imageUrl=str;
   }
 }

@@ -42,11 +42,13 @@ def predict(imagePath):
     
     if os.path.exists('result.png'):
         os.remove('result.png')
+        print("result.png exists")
     else:
          print(f"{'result.png'} does not exist.")
     plt.show()
     plt.savefig('result.png',format='png')
     plt.close()
+    print("image got from front end")
     with open('result.png', 'rb') as image_file:
              image_bytes = io.BytesIO(image_file.read())
     return image_bytes

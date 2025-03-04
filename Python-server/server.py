@@ -29,18 +29,14 @@ def predict_image():
 
 
 @app.post("/fetch-image")
-def upload_image(file: UploadFile = File(...)):
-    with open(f"{file.filename}", "wb") as buffer:
+async def upload_image(file: UploadFile = File(...)):
+     try:
+        with open(f"{file.filename}", "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
-            image_Path1=f"{file.filename}"
-            # image_Path1='captured-image.png'
-            print("image got from front end")
-            image_bytes=colab.predict(image_Path1)
-    #         image_path2 = 'result.png'
-    # # Open the image file in binary mode
-            # with open(image_path2, 'rb') as image_file:
-            #  image_bytes = io.BytesIO(image_file.read())
-    # Return the image as a response
-    return StreamingResponse(image_bytes, media_type="image/png")
-    # return "successfully predicted"
+        image_Path1 = f"{file.filename}"
+        print("Path of the input file:", image_Path1)
+        image_bytes = colab.predict(file.filename)
+        return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
+     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
     

@@ -7,7 +7,7 @@
     </div>
     @if(this.isEnableCamera==true)
     {
-        <app-webcam (isCaptured)="captureFunction()"></app-webcam >
+        <app-webcam (isCaptured)="captureFunction($event)"></app-webcam >
     }
     @if(this.isCaptured==true)
     {   

@@ -15,8 +15,8 @@ export class WebcamComponent{
   private httpService=inject(HttpService);
   trigger: Subject<void> = new Subject<void>();
   triggerObservable: Observable<void> = this.trigger.asObservable();
-  @Output() isCaptured = new EventEmitter<boolean>();
-
+  @Output() isCaptured = new EventEmitter<string>();
+  imageUrl=""
   handleImage(webcamImage: any): void {
     
     console.log('Raw webcam image data:', webcamImage);
@@ -39,24 +39,26 @@ export class WebcamComponent{
       }
   
       const blob = new Blob([ab], { type: 'image/jpeg' });
-      const file = new File([blob], 'captured-image.jpg', { type: 'image/jpeg' });
+      const file = new File([blob], 'captured-image.png', { type: 'image/png' });
       this.httpService.uploadImage(file).subscribe(
-        {
-          next(Data)
-          {
-             console.log(Data);
-          },
-          error(err) {
-               console.log("image sent unsuccessful");
-          },
-        }
-      ) 
-      // saveAs(blob, 'captured-image.jpg');
-      // this.storeImageLocally(blob);
+         {
+           next: (blob: Blob) => {
+            const objectURL = URL.createObjectURL(blob);
+            this.imageUrl = objectURL;
+            console.log("URL is : ",this.imageUrl);
+            this.isCaptured.emit(this.imageUrl);
+           },
+           error: (err) => {
+            console.error('Error uploading image', err);
+          }
+         }
+
+
+
+      );
     } catch (error) {
       console.error('Error processing base64 string:', error);
     }
-     
   }
 
   
@@ -71,7 +73,7 @@ export class WebcamComponent{
   storeImageLocally(blob: Blob): void {
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'captured-image.jpg';
+    link.download = 'captured-image.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -83,8 +85,7 @@ export class WebcamComponent{
   }
 
   clicked() {
-    this.isCaptured.emit(true);
-    this.triggerSnapshot();
     console.log("Capture clicked ....");
+    this.triggerSnapshot();
   }
 }

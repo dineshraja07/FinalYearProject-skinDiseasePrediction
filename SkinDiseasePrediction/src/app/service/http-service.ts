@@ -17,7 +17,9 @@ import { Observable } from 'rxjs';
       const formData = new FormData();
       formData.append('file', file);
       console.log("Image sent to the backend");
-      return this.httpClient.post(this.api+'fetch-image', formData);
+      return this.httpClient.post(this.api+'fetch-image', formData,{
+        responseType: 'blob'
+      });
     }
 
   }
