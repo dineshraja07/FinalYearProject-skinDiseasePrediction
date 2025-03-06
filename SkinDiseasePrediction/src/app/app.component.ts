@@ -1,13 +1,11 @@
 import { Component, EventEmitter, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SideNaveBarComponent } from './side-nave-bar/side-nave-bar.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
-import { WebcamComponent } from "./webcam/webcam.component";
 import { HttpService } from './service/http-service';
+import { SideNaveBarComponent } from "./side-nave-bar/side-nave-bar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [SideNaveBarComponent, DropdownComponent, WebcamComponent],
+  imports: [RouterOutlet, SideNaveBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,6 +15,7 @@ export class AppComponent {
   imageUrl: string | undefined;
   isEnableCamera:boolean=false;
   isCaptured:boolean=false;
+  diseaseName:string="";
   enableCamera()
   {
     this.isEnableCamera=true;

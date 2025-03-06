@@ -20,7 +20,7 @@ app.add_middleware(
 
 @app.get("/predict/image")
 def predict_image():
-   colab.predict(r'C:\Users\raja-7\FinalYearProject\Python-server\skin_disease.jpg')
+   colab.predict(r'C:\Users\raja-7\FinalYearProject\Python-server\skin_disease.jpg',r'C:\Users\raja-7\Downloads\best.pt')
    image_path = 'result.png'
    with open(image_path, 'rb') as image_file:
         image_bytes = io.BytesIO(image_file.read())
@@ -35,7 +35,7 @@ async def upload_image(file: UploadFile = File(...)):
             shutil.copyfileobj(file.file, buffer)
         image_Path1 = f"{file.filename}"
         print("Path of the input file:", image_Path1)
-        image_bytes = colab.predict(file.filename)
+        image_bytes = colab.predict(file.filename,r'C:\Users\raja-7\Downloads\best.pt')
         return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
      except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

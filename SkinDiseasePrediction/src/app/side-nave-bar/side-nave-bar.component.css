@@ -3,11 +3,11 @@
     margin: 0;
     display: inline-block;
     height: 100vh;
-    background-color: rgb(95, 95, 95);
+    background-color:  rgb(61, 70, 65);
 }
 
 .container{
-    background: rgb(95, 95, 95);
+    background: rgb(61, 70, 65);
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -17,6 +17,8 @@
     font-size: larger;
     color:white;
     gap: 20px;
+    box-shadow: 0 2px 5px  rgb(61, 70, 65);
+ 
   
 }
 .elements{
@@ -29,22 +31,24 @@
 .element{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
     height: 30px;
     justify-content: center;
     align-items: center;
 }
 
+
 .element:hover{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 50px;
-    background-color: white;
+    gap: 10px;
+    background-color:rgb(95, 95, 95);
     color:  rgb(104, 101, 101);
+    font-size: larger;
 }
 #logo{
     margin-top: 40px;

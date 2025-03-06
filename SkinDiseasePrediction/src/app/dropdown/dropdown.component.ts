@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class DropdownComponent {
   isSelected:boolean=false;
+  @Output() selectedDisease: EventEmitter<string> = new EventEmitter<string>();
   selected()
   {
      this.isSelected=!this.isSelected;
@@ -16,5 +18,6 @@ export class DropdownComponent {
   {
      console.log(str);
      this.isSelected=false;
+     this.selectedDisease.emit(str);
   }
 }

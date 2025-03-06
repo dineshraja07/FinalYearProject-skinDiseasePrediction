@@ -1,13 +1,24 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { DetailsComponent } from './details/details.component';
+import { PrecautionComponent } from './precaution/precaution.component';
 
 export const routes: Routes = [
     {
         path:'home',
-        component:AppComponent
+        component:HomeComponent
     }
-    ,{
-        path:'**',
-        redirectTo:'home'
+    // ,{
+    //     path:'**',
+    //     redirectTo:'home'
+    // }
+    ,
+    {
+        path:'details',
+        component:DetailsComponent
+    },
+    {
+        path:'precaution',
+        component:PrecautionComponent
     }
 ];

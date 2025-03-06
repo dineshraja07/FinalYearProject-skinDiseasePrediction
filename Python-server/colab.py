@@ -1,9 +1,9 @@
 from ultralytics import YOLO
 import io
 
-def predict(imagePath):
+def predict(imagePath,modelPath):
     from PIL import Image
-    model = YOLO(r'C:\Users\raja-7\Downloads\best.pt')  # load a custom model
+    model = YOLO(modelPath)  # load a custom model
     # Validate the model
 
 
