@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { EventEmitter, Output } from '@angular/core';
+import { HttpService } from '../service/http-service';
 
 @Component({
   selector: 'app-dropdown',
@@ -9,7 +10,8 @@ import { EventEmitter, Output } from '@angular/core';
 })
 export class DropdownComponent {
   isSelected:boolean=false;
-  @Output() selectedDisease: EventEmitter<string> = new EventEmitter<string>();
+  private httpservice=inject(HttpService);
+  
   selected()
   {
      this.isSelected=!this.isSelected;
@@ -18,6 +20,6 @@ export class DropdownComponent {
   {
      console.log(str);
      this.isSelected=false;
-     this.selectedDisease.emit(str);
+     this.httpservice.setDiseaseName(str);
   }
 }

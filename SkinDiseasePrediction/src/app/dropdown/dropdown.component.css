@@ -24,7 +24,7 @@ background-color: white;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: white;    
+    background-color: #f9f9f9   ;
     color:  rgb(104, 101, 101);
     height: 50px;
     width: 100px;
@@ -32,7 +32,6 @@ background-color: white;
 }
 
 .container.element:hover{
-    
         text-align: center;
         justify-content: center;
         align-items: center;
