@@ -2,18 +2,22 @@
     display: flex;
     flex-direction: column; /* Stacks items vertically */
     align-items: flex-start; /* Aligns items to the left */
-    margin: 20px; /* Adds spacing around the container */
-    margin-left: -100px;
+    /* margin: 20px; Adds spacing around the container */
+    width: 80%;
     gap: 70px;
+    height: 100px;
+    justify-content: center;
   }
-  
+  :host{
+    width: 100%;
+  }
   .item {
     background: #f9f9f9; /* Light background for each block */
     border: 1px solid #ddd; /* Subtle border */
     border-radius: 8px; /* Rounds corners */
-    padding: 15px; /* Adds space inside each item */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
-    width: 90%; /* Makes items take full width */
+    width: 100%; /* Makes items take full width */
+    height: 100px;
   }
   
   h3 ,h1{
@@ -37,6 +41,7 @@
        gap: 100px;
        align-items: center;
        justify-content: center;
+       height: 100px;
  }
  form p{
      position: relative;

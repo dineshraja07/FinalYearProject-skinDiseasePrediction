@@ -17,16 +17,17 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
     background: #f9f9f9; /* Light background for each block */
     border: 1px solid #ddd; /* Subtle border */
-    width: 87%;
+    width: 80%;
     height: 100px;
     align-items: center;
+    border-radius: 8px; /* Rounds corners */
 }
 .dropdown-webcam{
     justify-content: space-around;
     display:flex;
     flex-direction: column;
      gap: 50px;
-     width: 80%;
+     width: 100%;
 }
 .enableButton{
     border-radius: 5%;
@@ -45,6 +46,5 @@
 }
 .file-upload{
      position: relative;
-     left: 100px;
-     width:80%;
+     width:100%;
 }
