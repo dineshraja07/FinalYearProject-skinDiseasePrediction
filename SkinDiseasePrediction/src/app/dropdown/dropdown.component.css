@@ -1,6 +1,6 @@
 .container-div{
     display: flex;
- 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
     flex-direction: column;
 color: white;
 /* position: absolute;
@@ -10,11 +10,12 @@ position: absolute;
 left: 40px;
 gap: 10px;
 box-sizing: border-box;
-background-color: white;
+background-color: #f9f9f9   ;
 }
 .container1{
 display: none;
-background-color: white;
+background-color: #f9f9f9   ;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
 }
 .outer{
  position: relative;

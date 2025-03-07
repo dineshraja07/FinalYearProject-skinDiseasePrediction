@@ -10,18 +10,18 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
       trigger('fadeInOut', [
         state('void', style({ opacity: 0 })),
-        transition(':enter', [animate('500ms ease-in')]), // Animation for entering
-        transition(':leave', [animate('500ms ease-out')]) // Animation for leaving
+        transition(':enter', [animate('300ms ease-in')]), // Animation for entering
+        transition(':leave', [animate('300ms ease-out')]) // Animation for leaving
       ]),
       trigger('slideIn', [
         state('void', style({ transform: 'translateX(-100%)', opacity: 0 })),
-        transition(':enter', [animate('500ms ease-in')]), // Slide in from left
+        transition(':enter', [animate('300ms ease-in')]), // Slide in from left
       ])
       ,
       trigger('slideInFromRight', [
         state('void', style({ transform: 'translateX(100%)', opacity: 0 })), // Start off-screen to the right
         transition(':enter', [
-          animate('500ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })) // Slide in to the screen
+          animate('300ms ease-out', style({ transform: 'translateX(0)', opacity: 1 })) // Slide in to the screen
         ]),
         transition(':leave', [
           animate('300ms ease-in', style({ transform: 'translateX(100%)', opacity: 0 })) // Slide out back to the right

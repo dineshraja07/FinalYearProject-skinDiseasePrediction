@@ -1,9 +1,17 @@
 
     <div class="dropdown-webcam">
-    <div class="dropdown">
+    <div class="dropdown" >
         <app-dropdown ></app-dropdown>
         <div class="enableButton" (click)="enableCamera()">Enable Camera</div>
     </div>
+    <div class="file-upload">
+    @if(this.isEnableCamera==false && this.isCaptured==false)
+    {    <app-file-upload></app-file-upload>
+    }
+
+</div>
+
+  <div>
     @if(this.isEnableCamera==true)
     {
         <app-webcam (isCaptured)="captureFunction($event)"></app-webcam >
@@ -12,6 +20,7 @@
     {   
         <img [src]="this.imageUrl" alt="Not loaded">
     }
+</div>
 </div>
 
 

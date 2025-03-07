@@ -1,8 +1,7 @@
     <div class="outer">
     <div class="select" (click)="selected()">
-        <p>Select</p>
-        <img src="assets/dropdown.png" alt="P" class="profile-img" height="24" width="24"
-        />
+        <p>{{this.selectedDisease}}</p>
+        <img src="assets/dropdown.png" alt="P" class="profile-img" height="24" width="24"/>
     </div>
 
     <div  [class]="{'container-div': isSelected , 'container1': !isSelected}">

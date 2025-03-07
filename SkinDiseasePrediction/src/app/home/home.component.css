@@ -1,19 +1,32 @@
+:host{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .container{
     gap: 200px;
     display: flex;
     flex-direction: row;
+    
 }
 .dropdown{
     margin-top: 50px;
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 300px;
+    justify-content: space-around;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    background: #f9f9f9; /* Light background for each block */
+    border: 1px solid #ddd; /* Subtle border */
+    width: 87%;
+    height: 100px;
+    align-items: center;
 }
 .dropdown-webcam{
+    justify-content: space-around;
     display:flex;
     flex-direction: column;
      gap: 50px;
+     width: 80%;
 }
 .enableButton{
     border-radius: 5%;
@@ -29,4 +42,9 @@
 }
 *{
     color: white;
+}
+.file-upload{
+     position: relative;
+     left: 100px;
+     width:80%;
 }
