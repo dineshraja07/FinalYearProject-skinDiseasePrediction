@@ -9,8 +9,36 @@ import { Router } from '@angular/router';
 })
 export class SideNaveBarComponent {
   constructor(private router: Router) {}
+  isHomeSelected=false;
+  isDetailsPageSelected=false;
+  isAboutPageSelected=false;
+  isPrecautionPageSelected=false;
+  ActiveLinkMapper(str:string)
+  {
+      this.isHomeSelected=false;
+      this.isDetailsPageSelected=false;
+      this.isAboutPageSelected=false;
+      this.isPrecautionPageSelected=false;
+      if(str=='/details')
+      {
+         this.isDetailsPageSelected=true;
+      }
+      else if(str=='/home')
+      {
+         this.isHomeSelected=true;
+      }
+      else if(str=='/precaution')
+      {
+          this.isPrecautionPageSelected=true;
+      }
+      else if(str=='/about')
+      {
+          this.isAboutPageSelected=true;
+      }
+  }
   navigate(str:string)
   {
+        this.ActiveLinkMapper(str);
         this.router.navigate([str])
         .then(nav => {
           console.log(nav); // true if navigation is successful

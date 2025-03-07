@@ -2,21 +2,23 @@
   <div id="logo" class="elements">
       <img  src="assets/icon.jpg" alt="" width="80%" height="250px">
   </div>
-  <div class="elements">
-  <div class="element" (click)="navigate('/home')">
+  <div class="elements" [class]="{
+     
+  }">
+  <div class="element" (click)="navigate('/home')" [class]="{'active': isHomeSelected}">
     <img src="assets/home-icon-2.svg" alt="" width="30px" height="30px">
    <p>Home</p> 
   </div>
-  <div class="element"  (click)="navigate('/details')">
+  <div class="element"  (click)="navigate('/details')"  [class]="{'active': isDetailsPageSelected}">
     <img src="assets/details-icon.png " alt="" width="30px" height="30px">
    <p>Disease details</p> 
   </div>
 
-  <div class="element"  (click)="navigate('/precaution')">
+  <div class="element"  (click)="navigate('/precaution')"  [class]="{'active': isPrecautionPageSelected}">
     <img src="assets/icons8-precaution-48.png "    alt="" width="30px" height="30px">
    <p>Precautions</p> 
   </div>
-  <div class="element">
+  <div class="element"  (click)="navigate('/about')"  [class]="{'active': isAboutPageSelected}">
     <img src="assets/about-icon.png " alt="" width="30px" height="30px">
    <p> About Us</p>
   </div>

@@ -1,5 +1,4 @@
 import { Component,inject } from '@angular/core';
-import { EventEmitter, Output } from '@angular/core';
 import { HttpService } from '../service/http-service';
 
 @Component({
@@ -11,7 +10,6 @@ import { HttpService } from '../service/http-service';
 export class DropdownComponent {
   isSelected:boolean=false;
   private httpservice=inject(HttpService);
-  
   selected()
   {
      this.isSelected=!this.isSelected;

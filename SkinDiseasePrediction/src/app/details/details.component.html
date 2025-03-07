@@ -1,32 +1,16 @@
 <div class="container scroll" >
-    <div class="item">
-      <h3>1. Melasma:</h3>
-      <p><strong>Description:</strong> A common skin condition characterized by brown or gray-brown patches, often on the face.</p>
-      <p><strong>Effects:</strong> While harmless, it can cause cosmetic concerns and emotional distress due to its appearance.</p>
+  <div class="item" @slideIn>
+  <h1>Selected Disease : {{this.array.at(this.index)?.name}}</h1>
+</div>
+<div class="item" @slideInFromRight>
+  <h3>Stages in {{this.array.at(index)?.name}}</h3>
+  <p *ngFor="let stage of this.array.at(index)?.stages">{{ stage }}</p>
+</div>
+    <div class="item" @slideIn>
+      <h3>{{this.array.at(index)?.name}}</h3>
+      <p><strong>Description:</strong> {{this.array.at(index)?.description}}</p>
+      <p><strong>Effects:</strong>{{this.array.at(index)?.effects}}</p>
     </div>
-  
-    <div class="item">
-        <h3>2. Eczema:</h3>
-        <p><strong>Description:</strong> A chronic skin condition causing dry, itchy, and inflamed skin.</p>
-        <p><strong>Effects:</strong> Symptoms include redness, swelling, and sometimes oozing or crusting.</p>
-      </div>
-
-    <div class="item">
-        <h3>3. Psoriasis:</h3>
-        <p><strong>Description:</strong> An autoimmune condition that speeds up skin cell production, leading to scaly, itchy patches.</p>
-        <p><strong>Effects:</strong> Besides skin symptoms, it can cause joint pain (psoriatic arthritis) and increase the risk of other health issues like heart disease.</p>
-      </div>
-    
-      <div class="item">
-        <h3>4. Melanoma:</h3>
-        <p><strong>Description:</strong> A serious form of skin cancer originating in melanocytes, the cells that produce pigment.</p>
-        <p><strong>Effects:</strong> If untreated, it can spread to other parts of the body, becoming life-threatening. Early detection is crucial for successful treatment.</p>
-      </div>
-    
-      <div class="item">
-        <h3>5. Chickenpox:</h3>
-        <p><strong>Description:</strong> A highly contagious viral infection caused by the varicella-zoster virus, presenting as an itchy rash with fluid-filled blisters.</p>
-        <p><strong>Effects:</strong> While usually mild in children, it can lead to complications like bacterial infections or pneumonia in adults or immunocompromised individuals.</p>
-      </div>
+ 
   </div>
   

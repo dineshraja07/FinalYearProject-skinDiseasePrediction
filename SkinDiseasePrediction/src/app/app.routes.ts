@@ -15,7 +15,7 @@ export const routes: Routes = [
     ,
     {
         path:'details',
-        component:DetailsComponent
+        component:DetailsComponent,
     },
     {
         path:'precaution',

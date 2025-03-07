@@ -16,16 +16,18 @@
     width: 90%; /* Makes items take full width */
   }
   
-  h3 {
+  h3 ,h1{
     margin-bottom: 10px; /* Adds spacing below headings */
     color: #333; /* Darker color for headings */
+    padding-bottom: 30px;
   }
-  
   p {
     margin: 5px 0; /* Adds spacing between paragraphs */
     color: #555; /* Slightly muted color for text */
+    padding-bottom: 30px;
   } 
   
   strong {
     color: #000; /* Highlights "Description" and "Effects" labels */
+    padding-bottom: 30px;
   }
