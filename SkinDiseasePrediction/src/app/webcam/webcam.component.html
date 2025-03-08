@@ -1,2 +1,2 @@
-<webcam [width]=590 [trigger]="triggerObservable" (imageCapture)="handleImage($event)" imageType="image/jpeg"></webcam>
-<div class="button" (click)="clicked()" ><p>Capture</p></div>
+<webcam class="camera" [width]=400 [trigger]="triggerObservable" (imageCapture)="handleImage($event)" imageType="image/jpeg"></webcam>
+<div class="button" (click)="clicked()" ><img height="20px" src="assets/camera.png" alt=""><p>Capture</p></div>

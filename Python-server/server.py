@@ -28,15 +28,26 @@ def predict_image():
    return StreamingResponse(image_bytes, media_type="image/png")
 
 
-@app.post("/fetch-image")
+@app.post("/predict/Melonoma")
 async def upload_image(file: UploadFile = File(...)):
      try:
         with open(f"{file.filename}", "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
         image_Path1 = f"{file.filename}"
         print("Path of the input file:", image_Path1)
-        image_bytes = colab.predict(file.filename,r'C:\Users\raja-7\Downloads\best.pt')
+        image_bytes = colab.predict(file.filename,r'C:\Users\raja-7\Downloads\Melonoma2.pt')
         return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
      except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
+
+@app.post("/predict/Psoriasis")
+async def upload_image(file: UploadFile = File(...)):
+     try:
+        with open(f"{file.filename}", "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        image_Path1 = f"{file.filename}"
+        print("Path of the input file:", image_Path1)
+        image_bytes = colab.predict(file.filename,r'C:\Users\raja-7\Downloads\Psoriasis.pt')
+        return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
+     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

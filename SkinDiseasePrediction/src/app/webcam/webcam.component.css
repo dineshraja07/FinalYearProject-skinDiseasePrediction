@@ -1,6 +1,6 @@
 :host{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 50px;
 }
 .button{
@@ -21,4 +21,7 @@ video.mirrored{
 }
 *{
     color: white;
+}
+.camera{
+    box-shadow: 0 2px 5px  rgb(61, 70, 65);
 }

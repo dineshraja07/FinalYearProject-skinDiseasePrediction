@@ -25,9 +25,9 @@
 .dropdown-webcam{
     justify-content: space-around;
     display:flex;
+    gap: 30px;
     flex-direction: column;
-     gap: 50px;
-     width: 100%;
+    width: 90%;
 }
 .enableButton{
     border-radius: 5%;

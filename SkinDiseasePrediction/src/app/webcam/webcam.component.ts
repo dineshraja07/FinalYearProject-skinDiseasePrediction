@@ -1,7 +1,6 @@
 import { Component, inject, Output ,EventEmitter} from '@angular/core';
 import { WebcamModule } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
-import { saveAs } from 'file-saver';
 import { HttpService } from '../service/http-service';
 
 

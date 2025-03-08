@@ -8,8 +8,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
   export class HttpService{
     private httpClient = inject(HttpClient);
     public diseaseName1="";
+    public imageUrl="";
     public diseaseName=new  BehaviorSubject<string>("");
     private api='http://127.0.0.1:8000/';
+    setImagePath(str:string)
+    {
+      console.log("from setImagePath() :  "+str)
+         this.imageUrl=str;
+    }
+    getImagePath()
+    {
+      console.log("from getImagePath() :  "+this.imageUrl)
+      return this.imageUrl;
+    }
     getDiseaseName()
     {
       return this.diseaseName1;
@@ -28,9 +39,18 @@ import { BehaviorSubject, Observable } from 'rxjs';
       const formData = new FormData();
       formData.append('file', file);
       console.log("Image sent to the backend");
-      return this.httpClient.post(this.api+'fetch-image', formData,{
-        responseType: 'blob'
-      });
+      if(this.diseaseName1=="Melanoma")
+      {
+        return this.httpClient.post(this.api+'predict/Melonoma', formData,{
+          responseType: 'blob'
+        });
+      }
+      else{
+        return this.httpClient.post(this.api+'predict/Psoriasis', formData,{
+          responseType: 'blob'
+        });
+      }
+    
     }
 
   }

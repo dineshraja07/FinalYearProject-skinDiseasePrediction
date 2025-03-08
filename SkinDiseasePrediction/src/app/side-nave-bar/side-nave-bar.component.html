@@ -1,25 +1,25 @@
 <div class="container">
   <div id="logo" class="elements">
-      <img  src="assets/icon.jpg" alt="" width="80%" height="250px">
+      <img  src="assets/icon.jpg" alt="" width="80%" height="200px">
   </div>
   <div class="elements" [class]="{
      
   }">
   <div class="element" (click)="navigate('/home')" [class]="{'active': isHomeSelected}">
-    <img src="assets/home-icon-2.svg" alt="" width="30px" height="30px">
+    <img src="assets/home-icon-2.svg" alt="" width="30px" height="20px">
    <p>Home</p> 
   </div>
   <div class="element"  (click)="navigate('/details')"  [class]="{'active': isDetailsPageSelected}">
-    <img src="assets/details-icon.png " alt="" width="30px" height="30px">
+    <img src="assets/details-icon.png " alt="" width="30px" height="20px">
    <p>Disease details</p> 
   </div>
 
   <div class="element"  (click)="navigate('/precaution')"  [class]="{'active': isPrecautionPageSelected}">
-    <img src="assets/icons8-precaution-48.png "    alt="" width="30px" height="30px">
+    <img src="assets/precaution.png "    alt="" width="30px" height="20px">
    <p>Precautions</p> 
   </div>
   <div class="element"  (click)="navigate('/about')"  [class]="{'active': isAboutPageSelected}">
-    <img src="assets/about-icon.png " alt="" width="30px" height="30px">
+    <img src="assets/about-icon.png " alt="" width="30px" height="20px">
    <p> About Us</p>
   </div>
 </div>
