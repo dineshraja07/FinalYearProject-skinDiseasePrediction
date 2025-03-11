@@ -1,12 +1,13 @@
 <div class="container scroll" >
-  <div class="item" @slideIn>
+  <!-- add @slideIn to divs to add animation -->
+  <div class="item" >
   <h1>Selected Disease : {{this.array.at(this.index)?.name}}</h1>
 </div>
-<div class="item" @slideInFromRight>
+<div class="item" >
   <h3>Stages in {{this.array.at(index)?.name}}</h3>
   <p *ngFor="let stage of this.array.at(index)?.stages">{{ stage }}</p>
 </div>
-    <div class="item" @slideIn>
+    <div class="item" >
       <h3>{{this.array.at(index)?.name}}</h3>
       <p><strong>Description:</strong> {{this.array.at(index)?.description}}</p>
       <p><strong>Effects:</strong>{{this.array.at(index)?.effects}}</p>

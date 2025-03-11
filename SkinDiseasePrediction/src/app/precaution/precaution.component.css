@@ -6,7 +6,9 @@
     margin-left: -100px;
     gap: 70px;
   }
-  
+  :host{
+    width: 100%;
+  }
   .item {
     background: #f9f9f9; /* Light background for each block */
     border: 1px solid #ddd; /* Subtle border */

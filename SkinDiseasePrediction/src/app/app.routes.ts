@@ -34,4 +34,6 @@ export const routes: Routes = [
         path:'precaution',
         component:PrecautionComponent
     }
+    ,
+    { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
