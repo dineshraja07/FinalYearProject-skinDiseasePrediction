@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
     public diseaseName1="";
     public imageUrl="";
     public diseaseName=new  BehaviorSubject<string>("");
-    private api='http://127.0.0.1:8000/';
+    private api='http://127.0.0.1:8100/';
     setImagePath(str:string)
     {
       console.log("from setImagePath() :  "+str)
@@ -38,19 +38,36 @@ import { BehaviorSubject, Observable } from 'rxjs';
     uploadImage(file: File): Observable<any> {
       const formData = new FormData();
       formData.append('file', file);
-      console.log("Image sent to the backend");
+      console.log("Image sent to the backend : ",this.diseaseName1);
       if(this.diseaseName1=="Melanoma")
       {
         return this.httpClient.post(this.api+'predict/Melonoma', formData,{
           responseType: 'blob'
         });
       }
-      else{
+      else if (this.diseaseName1=='Psoriasis'){
         return this.httpClient.post(this.api+'predict/Psoriasis', formData,{
           responseType: 'blob'
         });
       }
+      else if (this.diseaseName1=='Melasma'){
+        return this.httpClient.post(this.api+'predict/Melasma', formData,{
+          responseType: 'blob'
+        });
+      }
+      else if (this.diseaseName1=='Eczema'){
+        return this.httpClient.post(this.api+'predict/Eczema', formData,{
+          responseType: 'blob'
+        });
+      }
+      else{
+           return this.httpClient.post(this.api+'predict/Chickenpox',formData,{
+              responseType:'blob'
+           }
+          );
+      }
+      }
     
     }
 
-  }
+  

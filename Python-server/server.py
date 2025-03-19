@@ -51,3 +51,29 @@ async def upload_image(file: UploadFile = File(...)):
         return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
      except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+     
+
+@app.post("/predict/Melasma")
+async def upload_image(file: UploadFile = File(...)):
+     try:
+        with open(f"{file.filename}", "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        image_Path1 = f"{file.filename}"
+        print("Path of the input file:", image_Path1)
+        image_bytes = colab.predict(file.filename,r'C:\Users\raja-7\Downloads\Melasma.pt')
+        return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
+     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+     
+@app.post("/predict/Chickenpox")
+async def upload_image(file: UploadFile = File(...)):
+     try:
+        with open(f"{file.filename}", "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        image_Path1 = f"{file.filename}"
+        print("Path of the input file:", image_Path1)
+        image_bytes = colab.predict(file.filename,r'C:\Users\raja-7\Downloads\Chickenpox.pt')
+        return StreamingResponse(io.BytesIO(image_bytes.read()), media_type="image/png")
+     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+     
